@@ -1,0 +1,76 @@
+# Liste des agents du projet.
+# Un agent = un rôle + un modèle. Pour changer de modèle, modifie seulement la ligne "modele".
+# "statut" : valide = choix retenu, a_tester = à trancher avec les projets types, a_confirmer = décision reportée.
+
+agents:
+  # Orchestrateur : distribue les tâches et contrôle les résultats
+  principal:
+    role: Coordonne les agents et distribue les tâches
+    modele: claude-opus-5-5
+    statut: valide
+
+  # Discussion avec le client pour récolter le besoin
+  chat:
+    role: Pose les questions au client et remplit les besoins bruts
+    modele: claude-haiku-5-5
+    statut: a_tester
+
+  # Découpe le besoin en tâches ordonnées
+  planification:
+    role: Découpe le besoin en tâches, priorités et estimations
+    modele: claude-sonnet-5-5
+    statut: valide
+
+  # Choix d'architecture, avec justifications
+  architecture:
+    role: Propose l'architecture technique avec justifications
+    modele: claude-opus-5-5
+    statut: valide
+
+  # Choix des outils, adaptés à l'architecture
+  stack:
+    role: Propose la stack technique adaptée à l'architecture
+    modele: claude-sonnet-5-5
+    statut: valide
+
+  # Parcours utilisateurs et user stories
+  ux:
+    role: Rédige les parcours utilisateurs et les user stories
+    modele: claude-sonnet-5-5
+    statut: valide
+
+  # Prototype HTML/CSS vanilla et design tokens
+  frontend:
+    role: Produit le prototype HTML/CSS vanilla et les design tokens
+    modele: claude-sonnet-5-5
+    statut: valide
+
+  # Données sensibles, RGPD, authentification
+  securite:
+    role: Vérifie les données sensibles, le RGPD et l'authentification
+    modele: claude-opus-5-5
+    statut: valide
+
+  # Documentation rédigée à partir du brief
+  documentation:
+    role: Rédige la documentation à partir du brief
+    modele: claude-haiku-5-5
+    statut: a_tester
+
+  # Juge qui repère les incohérences entre livrables
+  validation:
+    role: Vérifie la cohérence entre les livrables
+    modele: claude-opus-5-5
+    statut: valide
+
+  # Résumés et comptes rendus
+  compte_rendu:
+    role: Produit les résumés et comptes rendus
+    modele: claude-haiku-5-5
+    statut: valide
+
+  # Vérifie la faisabilité technique, puis prépare la CI/CD du repo client
+  devops:
+    role: Vérifie que le livrable est déployable et prépare la CI/CD du repo client
+    modele: claude-sonnet-5-5
+    statut: valide
