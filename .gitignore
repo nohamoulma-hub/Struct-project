@@ -1,0 +1,9 @@
+# Fichiers de secrets : ils restent sur ton Mac et ne partent jamais sur GitHub
+.env
+*.env
+
+# Résultats des tests : données de test, pas des livrables
+resultats/
+
+# Fichiers créés automatiquement par macOS
+.DS_Store

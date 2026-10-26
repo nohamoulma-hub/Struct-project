@@ -1,0 +1,10 @@
+# Historique Git : inutile dans le conteneur
+.git
+
+# Fichiers de secrets : ils ne doivent jamais entrer dans l'image
+.env
+*.env
+
+# Fichiers propres à l'éditeur ou au système
+.DS_Store
+.vscode
