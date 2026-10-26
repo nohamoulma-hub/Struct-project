@@ -38,3 +38,7 @@
 - Validé et appliqué : `architecture`, `stack` et `securite` reçoivent la recherche web (`WebSearch`, `WebFetch`). Règle sur les sources : lien consulté, sinon « source à vérifier ». Image reconstruite et vérifiée.
 - Ouvert : la fiabilité des réponses. Pistes : vérifier mécaniquement les liens de la trace, marquer chaque affirmation (sourcée, estimée, à vérifier), faire relire les sources par `validation`, et tester les agents sur des questions dont la réponse est connue. Ce chantier n'est pas encore décidé.
 - README mis à jour (statut, lancement d'un test, nouveaux fichiers). Push préparé sur une branche séparée de `main`.
+- Branche renommée `dev` (au lieu de `add/agents-et-tests`).
+- Validé et appliqué, pistes 1 à 3 : vérification automatique des liens de la trace (`verifier_liens`, testée hors API) ; étiquettes « sourcée », « estimée », « à vérifier » dans les règles communes ; rappel « ne fige jamais une règle métier que le client n'a pas donnée » dans les fiches `architecture` et `stack`.
+- Le principal doit conserver les liens des sous-agents dans sa réponse finale, sinon la vérification ne voit rien.
+- Pistes 4 (relecture des sources par `validation`) et 5 (questions de contrôle) : pas encore décidées.
