@@ -11,6 +11,8 @@ simulé comme validé, avec les points « À confirmer » encore ouverts.
 import asyncio
 import re
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -71,14 +73,37 @@ def construire_sous_agents():
     return agents
 
 
-def enregistrer_trace(chemin_projet, reponse, cout):
+def verifier_liens(texte):
+    # Ouvre chaque lien trouvé dans le texte et note s'il répond,
+    # comme on essaie chaque numéro d'une liste pour voir lequel est encore valide
+    liens = sorted({lien.rstrip(".,;:") for lien in re.findall(r"https?://[^\s)\]>\"']+", texte)})
+    lignes = []
+    for lien in liens:
+        requete = urllib.request.Request(lien, headers={"User-Agent": "Mozilla/5.0"})
+        try:
+            with urllib.request.urlopen(requete, timeout=10) as reponse_web:
+                etat = f"OK ({reponse_web.status})"
+        except urllib.error.HTTPError as erreur:
+            etat = f"erreur HTTP {erreur.code}"
+        except (urllib.error.URLError, TimeoutError):
+            etat = "injoignable"
+        lignes.append(f"- {lien} : {etat}")
+    return lignes
+
+
+def enregistrer_trace(chemin_projet, reponse, cout, verification):
     # Range la réponse du principal dans resultats/, avec la date dans le nom,
     # comme on classe une copie de chaque test dans un classeur daté
     dossier = RACINE / "resultats"
     dossier.mkdir(exist_ok=True)
     horodatage = datetime.now().strftime("%Y-%m-%d_%H-%M")
     chemin = dossier / f"{horodatage}_{Path(chemin_projet).stem}.md"
-    chemin.write_text(f"{reponse}\n\n---\nCoût du test : {cout} $\n", encoding="utf-8")
+    # Ajoute la liste des liens vérifiés, ou une ligne si la réponse n'en cite aucun
+    liens = "\n".join(verification) if verification else "Aucun lien cité."
+    chemin.write_text(
+        f"{reponse}\n\n---\n## Vérification des liens\n{liens}\n\nCoût du test : {cout} $\n",
+        encoding="utf-8",
+    )
     return chemin
 
 
@@ -95,6 +120,8 @@ async def lancer(chemin_projet):
         "de l'architecture.\n"
         "Arrête-toi au checkpoint 2 : présente l'architecture et la stack à Noham pour "
         "validation. Ne lance pas les phases 4 à 7.\n"
+        "Conserve dans ta réponse finale les liens cités par les sous-agents : "
+        "les liens sont vérifiés à partir de ta réponse.\n"
         "Ne tente pas d'écrire de fichier : ta réponse finale est enregistrée automatiquement.\n\n"
         f"--- PROJET TYPE ---\n{lire_fichier(chemin_projet)}\n--- FIN ---\n\n"
         f"--- MODÈLE DE BRIEF ---\n{lire_fichier('brief/modele-brief-projet.md')}"
@@ -115,7 +142,7 @@ async def lancer(chemin_projet):
         if isinstance(message, ResultMessage):
             reponse = message.result
             cout = message.total_cost_usd
-    chemin = enregistrer_trace(chemin_projet, reponse, cout)
+    chemin = enregistrer_trace(chemin_projet, reponse, cout, verifier_liens(reponse))
     print(reponse)
     print(f"Coût du test : {cout} $")
     print(f"Trace enregistrée : {chemin}")
