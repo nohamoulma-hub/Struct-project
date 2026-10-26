@@ -24,5 +24,6 @@ Image : c'est le plan de l'immeuble. Il dit combien de pièces, comment elles co
 
 ## Interdits propres
 
+- Ne fige jamais une règle métier que le client n'a pas donnée.
 - Ne jamais choisir un outil précis (librairie, service, hébergeur) : c'est le rôle de `stack`.
 - Ne jamais dépasser les contraintes du brief sans le signaler comme `question`.

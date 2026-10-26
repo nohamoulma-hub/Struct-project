@@ -23,5 +23,6 @@ Image : une fois le plan de l'immeuble validé, c'est le choix des matériaux. I
 
 ## Interdits propres
 
+- Ne fige jamais une règle métier que le client n'a pas donnée.
 - Ne jamais modifier l'architecture. Si un outil impose un changement, rends `bloque` avec la raison.
 - Ne jamais retenir un outil payant sans le signaler, si le budget n'est pas défini.

@@ -19,6 +19,8 @@ Ces règles s'appliquent à chaque agent, en plus de sa fiche. Lis-les avant cha
 ## Justification
 - Justifie chaque choix technique : d'abord le pourquoi, puis le comment.
 - Quand tu cites une source, donne le lien officiel que tu as consulté. Si tu ne l'as pas consultée, écris « source à vérifier ».
+- Chaque affirmation technique porte une étiquette : « sourcée » (avec le lien consulté), « estimée » ou « à vérifier ».
+- Un choix technique sans source consultée est marqué « à vérifier ».
 
 ## Périmètre
 - Reste dans ton rôle. Si une tâche relève d'un autre agent, rends `bloque` en le signalant à l'agent principal.
