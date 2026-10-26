@@ -11,7 +11,8 @@ Projet personnel d'apprentissage, pensé pour être réutilisé à chaque nouvea
 - `frontend/` : prototype HTML/CSS vanilla (vide pour l'instant)
 - `skills/` : procédures réutilisables (vide pour l'instant)
 - `projets-types/` : cas de test fictifs pour vérifier la chaîne d'agents
-- `scripts/` : script qui lance un projet type sur la chaîne d'agents
+- `scripts/` : script qui lance un projet type sur la chaîne d'agents, et script de contrôle de fiabilité
+- `controle/` : questions dont la réponse est connue, pour mesurer la fiabilité des agents
 - `resultats/` : briefs produits par les tests (ignoré par Git)
 - `Dockerfile` et `.dockerignore` : conteneur qui fait tourner les tests, avec Python et le SDK
 - `JOURNAL.md` : suivi des sessions

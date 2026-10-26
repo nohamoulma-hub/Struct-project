@@ -26,7 +26,7 @@ RACINE = Path(__file__).resolve().parent.parent
 BUDGET_MAX_USD = 5.0
 
 # Agents qui doivent citer des sources : ils ont aussi accès au web
-AGENTS_AVEC_WEB = {"architecture", "stack", "securite"}
+AGENTS_AVEC_WEB = {"architecture", "stack", "securite", "validation"}
 
 
 def lire_fichier(chemin):
@@ -118,6 +118,8 @@ async def lancer(chemin_projet):
         "- Phase 2 (cadrage) : délègue à `planification` et à `ux`.\n"
         "- Phase 3 (conception) : délègue à `architecture`, puis à `stack`, qui dépend "
         "de l'architecture.\n"
+        "- Relecture des sources : délègue à `validation` la vérification des liens cités "
+        "par `architecture` et `stack`. Chaque page doit confirmer l'affirmation.\n"
         "Arrête-toi au checkpoint 2 : présente l'architecture et la stack à Noham pour "
         "validation. Ne lance pas les phases 4 à 7.\n"
         "Conserve dans ta réponse finale les liens cités par les sous-agents : "

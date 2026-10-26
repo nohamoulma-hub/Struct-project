@@ -1,0 +1,53 @@
+[
+  {
+    "question": "Quelle commande installe le SDK Claude Agent SDK pour Python ?",
+    "attendu": "pip install claude-agent-sdk",
+    "source": "https://code.claude.com/docs/en/agent-sdk/python"
+  },
+  {
+    "question": "Dans quel dossier GitHub Actions cherche-t-il les fichiers de workflow ?",
+    "attendu": ".github/workflows",
+    "source": "https://docs.github.com/en/actions/writing-workflows/quickstart"
+  },
+  {
+    "question": "Quel préfixe doit commencer le nom d'une variable CSS personnalisée ?",
+    "attendu": "--",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties"
+  },
+  {
+    "question": "Quelle commande Docker construit une image à partir du dossier courant ?",
+    "attendu": "docker build .",
+    "source": "https://docs.docker.com/reference/cli/docker/image/build/"
+  },
+  {
+    "question": "SQLite stocke-t-il une base de données complète dans un seul fichier ?",
+    "attendu": "oui",
+    "source": "https://sqlite.org/about.html"
+  },
+  {
+    "question": "Quel paramètre du SDK Python plafonne la dépense d'une requête ?",
+    "attendu": "max_budget_usd",
+    "source": "https://code.claude.com/docs/en/agent-sdk/subagents"
+  },
+  {
+    "question": "Dans un sous-agent du SDK, quel champ limite la liste des outils disponibles ?",
+    "attendu": "tools",
+    "source": "https://code.claude.com/docs/en/agent-sdk/subagents"
+  },
+  {
+    "question": "Quel est le prix d'entrée de Claude Haiku 5.5 par million de tokens, pour des requêtes jusqu'à 100 000 tokens ?",
+    "attendu": "0,10 $",
+    "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+  },
+  {
+    "question": "Quel est le prix de 1 000 recherches web sur l'API Claude ?",
+    "attendu": "10 $",
+    "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+  },
+  {
+    "question": "Quelle est la version minimale de Python requise par le SDK, selon la doc officielle ?",
+    "attendu": "non précisée dans la doc officielle",
+    "source": "https://code.claude.com/docs/en/agent-sdk/python",
+    "piege": true
+  }
+]

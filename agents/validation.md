@@ -19,6 +19,7 @@ Image : c'est le contrôleur qualité avant l'expédition. Il compare la command
 ## Sortie attendue
 
 - Un statut `ok` ou `bloque`.
+- Pour les sources citées par les autres agents : tu ouvres chaque lien et tu vérifies qu'il confirme l'affirmation. Une source qui ne la confirme pas rend le point « à vérifier ».
 - Si `bloque` : la liste des écarts, chacun avec le fichier concerné, l'incohérence, et le livrable qu'elle touche.
 - Un rappel des points « À confirmer » encore ouverts.
 

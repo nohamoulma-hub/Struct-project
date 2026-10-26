@@ -42,3 +42,5 @@
 - Validé et appliqué, pistes 1 à 3 : vérification automatique des liens de la trace (`verifier_liens`, testée hors API) ; étiquettes « sourcée », « estimée », « à vérifier » dans les règles communes ; rappel « ne fige jamais une règle métier que le client n'a pas donnée » dans les fiches `architecture` et `stack`.
 - Le principal doit conserver les liens des sous-agents dans sa réponse finale, sinon la vérification ne voit rien.
 - Pistes 4 (relecture des sources par `validation`) et 5 (questions de contrôle) : pas encore décidées.
+- Piste 4 ajoutée : `validation` reçoit la recherche web et vérifie les liens cités par `architecture` et `stack` (mission du script et fiche `validation.md`). Non testée avec l'API.
+- Piste 5 ajoutée : dix questions dans `controle/questions-fiabilite.json`, chacune vérifiée à la source le 26/10/2026 (dont une question piège sur la version de Python, que la doc ne précise pas). Script `scripts/controle_fiabilite.py`, qui écrit les réponses dans `resultats/` pour relecture. Non lancé : il consomme des crédits API.
