@@ -76,7 +76,7 @@ def construire_sous_agents():
 def verifier_liens(texte):
     # Ouvre chaque lien trouvé dans le texte et note s'il répond,
     # comme on essaie chaque numéro d'une liste pour voir lequel est encore valide
-    liens = sorted({lien.rstrip(".,;:") for lien in re.findall(r"https?://[^\s)\]>\"']+", texte)})
+    liens = sorted({lien.rstrip(".,;:") for lien in re.findall(r"https?://[^\s)\]>\"'`]+", texte)})
     lignes = []
     for lien in liens:
         requete = urllib.request.Request(lien, headers={"User-Agent": "Mozilla/5.0"})
@@ -120,6 +120,8 @@ async def lancer(chemin_projet):
         "de l'architecture.\n"
         "- Relecture des sources : délègue à `validation` la vérification des liens cités "
         "par `architecture` et `stack`. Chaque page doit confirmer l'affirmation.\n"
+        "Une simple correction de formulation n'est pas un blocage : `validation` rend `ok` "
+        "avec la liste des corrections. `bloque` est réservé aux incohérences graves.\n"
         "Arrête-toi au checkpoint 2 : présente l'architecture et la stack à Noham pour "
         "validation. Ne lance pas les phases 4 à 7.\n"
         "Conserve dans ta réponse finale les liens cités par les sous-agents : "
