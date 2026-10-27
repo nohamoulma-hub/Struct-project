@@ -2,7 +2,7 @@
 
 Lis d'abord `brief/regles-agents.md`. Les règles ci-dessous s'y ajoutent.
 
-**Modèle** : Opus 5.5 (voir `agents/config.yaml`).
+**Modèle** : Sonnet 5.5 (voir `agents/config.yaml`).
 
 ## Rôle
 

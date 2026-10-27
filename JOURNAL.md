@@ -67,3 +67,4 @@
   - RFC 4180 : expliquée à Noham (format CSV, document IETF d'information, non norme).
   - Point non réglé : `validation` a encore rendu `bloque`, pour cinq formulations, alors que la fiche demande `ok` avec corrections. Il faut renforcer la consigne dans la mission du script.
   - Bug relevé : l'expression qui extrait les liens capture un accent grave à la fin (`http://localhost`), d'où un lien « injoignable » parasite. Il faut exclure le caractère dans la regex.
+- 2026-10-27 : variante A appliquée pour réduire les coûts. Opus passe sur Sonnet (`principal`, `architecture`, `securite`, `validation`). Sonnet passe sur Haiku (`stack`, `ux`, `planification`, `frontend`, `devops`). `chat`, `documentation` et `compte_rendu` restent sur Haiku. Les fiches et `agents/config.yaml` sont à jour. À réévaluer après les tests, car la fiabilité reste l'objectif.
