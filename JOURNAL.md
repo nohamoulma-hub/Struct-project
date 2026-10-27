@@ -44,3 +44,20 @@
 - Pistes 4 (relecture des sources par `validation`) et 5 (questions de contrôle) : pas encore décidées.
 - Piste 4 ajoutée : `validation` reçoit la recherche web et vérifie les liens cités par `architecture` et `stack` (mission du script et fiche `validation.md`). Non testée avec l'API.
 - Piste 5 ajoutée : dix questions dans `controle/questions-fiabilite.json`, chacune vérifiée à la source le 26/10/2026 (dont une question piège sur la version de Python, que la doc ne précise pas). Script `scripts/controle_fiabilite.py`, qui écrit les réponses dans `resultats/` pour relecture. Non lancé : il consomme des crédits API.
+- Commits sur `dev` (1792f24), puis `main` mis à jour par fast-forward avec le même commit.
+- Premier contrôle lancé : `resultats/2026-10-26_13-42_controle.md`, coût 0,85 $. 9 réponses justes sur 10, chacune avec une source qui répond (200).
+- Erreur de ma part : la question 10 était fausse. Je n'avais lu que la page de référence du SDK, pas le quickstart, qui indique « Python 3.10+ ». L'agent a eu raison. La question est corrigée dans le JSON (réponse attendue : Python 3.10).
+- Limite relevée : vérifier qu'un lien répond ne prouve pas que la page confirme l'affirmation. C'est le rôle de la relecture par `validation` (piste 4), qui n'est pas encore testée.
+- Test complet `gestion-stock-atelier` jusqu'au checkpoint 2 : `resultats/2026-10-26_13-46_gestion-stock-atelier.md`, coût 0,86 $.
+  - Amélioration : plus de règle métier figée (architecture en deux options A et B, avec des questions au client). Plus de supposition sur Node.js.
+  - Piste 4 fonctionnelle : `validation` a relu les pages et a corrigé deux affirmations (HTTPS « dans certains navigateurs », `persist()` sans garantie).
+  - Problème 1 : `validation` a rendu « bloque » pour de simples corrections de formulation. Le statut est trop sévère. À revoir.
+  - Problème 2 : la RFC 4180 répond 200 au contrôle mécanique, mais `validation` la déclare inaccessible. Les deux vérifications ne sont pas équivalentes.
+  - Problème 3 : `architecture` demande une autorisation d'accès à des domaines. Ce n'est pas une décision que Noham peut prendre ici. La question doit être supprimée des décisions attendues.
+  - Étiquettes « sourcée », « estimée », « à vérifier » : présentes, mais pas systématiques.
+- 2026-10-27 : corrections appliquées.
+  - Chaque affirmation technique est « sourcée » ou « non sourcée », sans exception (`brief/regles-agents.md`).
+  - Un agent ne demande plus à Noham d'autoriser un accès technique.
+  - `validation` rend `ok` pour une simple correction de formulation, et `bloque` seulement pour une incohérence grave (`agents/validation.md`).
+  - Correction de la question 10 du contrôle dans le JSON.
+  - Relance du test complet `gestion-stock-atelier` en cours.

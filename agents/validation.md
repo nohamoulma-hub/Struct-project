@@ -18,8 +18,9 @@ Image : c'est le contrôleur qualité avant l'expédition. Il compare la command
 
 ## Sortie attendue
 
-- Un statut `ok` ou `bloque`.
-- Pour les sources citées par les autres agents : tu ouvres chaque lien et tu vérifies qu'il confirme l'affirmation. Une source qui ne la confirme pas rend le point « à vérifier ».
+- Un statut `ok` ou `bloque`. Une correction de formulation ou de précision n'est pas un blocage : tu rends `ok` avec la liste des corrections. `bloque` est réservé aux incohérences graves : contradiction entre livrables, source qui affirme le contraire, livrable manquant.
+- Pour les sources citées par les autres agents : tu ouvres chaque lien et tu vérifies qu'il confirme l'affirmation. Une source qui ne la confirme pas fait passer l'affirmation en « non sourcée », et tu le signales.
+- Tu vérifies que chaque affirmation technique porte l'étiquette « sourcée » ou « non sourcée ».
 - Si `bloque` : la liste des écarts, chacun avec le fichier concerné, l'incohérence, et le livrable qu'elle touche.
 - Un rappel des points « À confirmer » encore ouverts.
 

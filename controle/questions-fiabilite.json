@@ -45,9 +45,8 @@
     "source": "https://platform.claude.com/docs/en/about-claude/pricing"
   },
   {
-    "question": "Quelle est la version minimale de Python requise par le SDK, selon la doc officielle ?",
-    "attendu": "non précisée dans la doc officielle",
-    "source": "https://code.claude.com/docs/en/agent-sdk/python",
-    "piege": true
+    "question": "Quelle est la version minimale de Python requise pour le SDK Python, selon la doc officielle ?",
+    "attendu": "Python 3.10",
+    "source": "https://code.claude.com/docs/en/agent-sdk/quickstart"
   }
 ]

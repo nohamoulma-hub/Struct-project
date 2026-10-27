@@ -19,11 +19,11 @@ Ces règles s'appliquent à chaque agent, en plus de sa fiche. Lis-les avant cha
 ## Justification
 - Justifie chaque choix technique : d'abord le pourquoi, puis le comment.
 - Quand tu cites une source, donne le lien officiel que tu as consulté. Si tu ne l'as pas consultée, écris « source à vérifier ».
-- Chaque affirmation technique porte une étiquette : « sourcée » (avec le lien consulté), « estimée » ou « à vérifier ».
-- Un choix technique sans source consultée est marqué « à vérifier ».
+- Chaque affirmation technique porte une étiquette, sans exception : « sourcée » (avec le lien consulté) ou « non sourcée ».
 
 ## Périmètre
 - Reste dans ton rôle. Si une tâche relève d'un autre agent, rends `bloque` en le signalant à l'agent principal.
+- Ne demande jamais à Noham d'autoriser un accès technique (domaine, outil, service). Ce n'est pas une décision du projet : vérifie avec les moyens que tu as, ou marque l'affirmation « non sourcée ».
 
 ## Validation humaine
 - Tu ne franchis jamais un checkpoint seul : seul Noham valide.
