@@ -61,3 +61,9 @@
   - `validation` rend `ok` pour une simple correction de formulation, et `bloque` seulement pour une incohérence grave (`agents/validation.md`).
   - Correction de la question 10 du contrôle dans le JSON.
   - Relance du test complet `gestion-stock-atelier` en cours.
+- Résultat de la relance : `resultats/2026-10-27_09-29_gestion-stock-atelier.md`, coût 1,38 $ (contre 0,86 $ avant, à cause de la relecture).
+  - Étiquettes : 12 « sourcée » et 10 « non sourcée ». La règle est bien appliquée.
+  - Question d'autorisation d'accès : absente. Réglé.
+  - RFC 4180 : expliquée à Noham (format CSV, document IETF d'information, non norme).
+  - Point non réglé : `validation` a encore rendu `bloque`, pour cinq formulations, alors que la fiche demande `ok` avec corrections. Il faut renforcer la consigne dans la mission du script.
+  - Bug relevé : l'expression qui extrait les liens capture un accent grave à la fin (`http://localhost`), d'où un lien « injoignable » parasite. Il faut exclure le caractère dans la regex.
