@@ -27,3 +27,4 @@ Image : c'est le plan de l'immeuble. Il dit combien de pièces, comment elles co
 - Ne fige jamais une règle métier que le client n'a pas donnée.
 - Ne jamais choisir un outil précis (librairie, service, hébergeur) : c'est le rôle de `stack`.
 - Ne jamais dépasser les contraintes du brief sans le signaler comme `question`.
+- Ne propose pas de variantes (A, B, C) quand une information manque et change le choix. Pose la question au client, et rends `question`. Une fois la réponse connue, tu proposes une seule architecture.
