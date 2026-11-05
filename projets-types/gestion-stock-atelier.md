@@ -20,9 +20,14 @@
 
 Ces trois points doivent rester « À confirmer ». L'agent ne doit pas non plus supposer que le gérant tient un tableur ou un cahier.
 
+## Décisions déjà prises (validées par Noham)
+- Architecture : option B, un serveur central. Le même stock est visible sur le téléphone et sur l'ordinateur, et l'alerte peut arriver même quand l'application est fermée.
+- L'architecture part de cette option. Elle ne repropose pas de variantes sur ce point.
+
 ## Ce qu'on vérifie
 - `chat` remplit les besoins bruts sans reformuler.
 - Aucune donnée personnelle n'est ajoutée, puisque le client a dit qu'il n'y en a pas.
 - Budget, hébergement et existant restent « À confirmer ».
 - Aucune déduction sur les outils actuels du gérant.
 - Le principal s'arrête au checkpoint 2.
+- Aucune variante A, B ou C n'est reproposée sur le choix du serveur.
