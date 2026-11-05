@@ -122,6 +122,8 @@ async def lancer(chemin_projet):
         "par `architecture` et `stack`. Chaque page doit confirmer l'affirmation.\n"
         "Une simple correction de formulation n'est pas un blocage : `validation` rend `ok` "
         "avec la liste des corrections. `bloque` est réservé aux incohérences graves.\n"
+        "Garde dans ta réponse finale l'étiquette « sourcée » ou « non sourcée » de chaque "
+        "affirmation technique, telle que la donne le sous-agent. Ne retire pas ces étiquettes en résumant.\n"
         "Arrête-toi au checkpoint 2 : présente l'architecture et la stack à Noham pour "
         "validation. Ne lance pas les phases 4 à 7.\n"
         "Conserve dans ta réponse finale les liens cités par les sous-agents : "

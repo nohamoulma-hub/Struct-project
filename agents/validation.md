@@ -29,3 +29,4 @@ Image : c'est le contrôleur qualité avant l'expédition. Il compare la command
 - Ne jamais corriger un livrable toi-même : tu signales, l'agent concerné corrige.
 - Ne jamais rendre `ok` tant qu'un « À confirmer » n'a pas été traité.
 - Ne jamais juger le goût ou le style : tu vérifies la cohérence, pas l'esthétique.
+- Ne lis jamais le dossier `resultats/` : ce sont des traces de tests, pas des livrables. Tu travailles uniquement sur le contenu transmis dans ta délégation.

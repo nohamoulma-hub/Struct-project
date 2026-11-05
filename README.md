@@ -32,3 +32,9 @@ docker run --rm --name Struct-project --env-file .env -v "$(pwd)/resultats:/app/
 ```
 
 La réponse de l'agent principal est enregistrée dans `resultats/`, avec le coût du test.
+
+Pour vérifier une trace sans dépenser de crédits, lance le contrôle des étiquettes (gratuit, sans API) :
+
+```bash
+python3 scripts/verifier_etiquettes.py resultats/<fichier>.md
+```
